@@ -46,7 +46,14 @@ function completeItem() {
   });
 }
 
+function removeItem() {
+  $('.shopping-list').on('click', '.shopping-item-delete', event => {
+    $(event.currentTarget).closest('li').remove();
+  });
+}
 
+
+$(removeItem);
 $(handleClick);
 $(completeItem);
 // $(main);
