@@ -1,11 +1,5 @@
 'use strict';
 
-// function main() {
- 
-// }
-
-// $(main);
-
 function createListItems(itemName) {
   return `<li>
             <span class="shopping-item">${itemName}</span>
@@ -44,4 +38,15 @@ function handleClick() {
   });
 }
 
+function completeItem() {
+  $('.shopping-list').on('click', '.shopping-item-toggle', event => {
+    $(event.currentTarget).html('Clicked!');
+    // $(toggledSpan).toggleClass('.shopping-item__checked');
+    console.log($(event.currentTarget).closest('li').find('.shopping-item').toggleClass(' shopping-item__checked'));
+  });
+}
+
+
 $(handleClick);
+$(completeItem);
+// $(main);
